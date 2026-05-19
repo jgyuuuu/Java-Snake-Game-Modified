@@ -30,7 +30,7 @@ A new class named SnakeGameModel.java was added to separate part of the game log
 
 ## JUnit Testing
 
-JUnit 5 tests were added in:
+JUnit 7 tests were added in:
 
 ```text
 src/test/java/com/zetcode/SnakeGameModelTest.java
