@@ -75,8 +75,6 @@ public class Board extends JPanel implements ActionListener {
 
         if (model.isInGame()) {
 
-            // Modified by me:
-            // Draw score, high score, apple, obstacles, snake, and pause overlay.
             drawScores(g);
             g.drawImage(apple, model.getAppleX(), model.getAppleY(), this);
             drawObstacles(g);
@@ -96,14 +94,13 @@ public class Board extends JPanel implements ActionListener {
     }
 
     // Modified by me:
-    // Current score and high score are visible during gameplay.
+    // Current score is visible during gameplay.
     private void drawScores(Graphics g) {
         Font scoreFont = new Font("Helvetica", Font.BOLD, 12);
 
         g.setColor(Color.white);
         g.setFont(scoreFont);
         g.drawString("Score: " + model.getScore(), 8, 16);
-        g.drawString("High Score: " + model.getHighScore(), 190, 16);
     }
 
     // Modified by me:
@@ -170,7 +167,7 @@ public class Board extends JPanel implements ActionListener {
     private void gameOver(Graphics g) {
 
         String msg = "Game Over";
-        String scoreMsg = "Score: " + model.getScore() + "  High Score: " + model.getHighScore();
+        String scoreMsg = "Score: " + model.getScore();
         Font small = new Font("Helvetica", Font.BOLD, 14);
         FontMetrics metr = getFontMetrics(small);
 

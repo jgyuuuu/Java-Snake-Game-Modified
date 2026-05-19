@@ -8,20 +8,29 @@ https://zetcode.com/javagames/snake/
 
 ![Snake game screenshot](snake.png)
 
-## Project Type
+## Modified Features
+
+The modified version includes current score display, obstacles, WASD controls, and a pause menu.
+
+The snake can be controlled using arrow keys or WASD. Press P to pause the game. When the pause menu appears, press C to continue, R to restart, or E/Esc to exit.
+
+## GUI Modifications
+
+The game interface was modified by adding a current score display, visible obstacles, and a pause menu.
 
 The chosen project is **Snake Game using Java**. It belongs to **Java Projects For Beginners**.
 
-The modified version is named **Enhanced Snake Game using Java**.
+The game now has a scoring system, obstacle collision mechanism, pause menu system, restart function, exit function, and WASD keyboard control.
 
-## Modified GUI Features
+The player gets 10 points whenever the snake eats an apple. The game starts with three obstacles. If the snake hits an obstacle, the game ends. The apple generation logic also prevents apples from appearing on the snake body or on obstacles.
 
-The graphical user interface was modified by adding a current score display, a high score display, visible obstacles, and a pause menu.
+## Code Structure Modification
 
-When the game is paused, the pause menu appears in the center of the game board and displays the following options:
+A new class named SnakeGameModel.java was added to separate part of the game logic from the Swing GUI. This makes the game logic easier to test with JUnit.
+
+## JUnit Testing
+
+JUnit 5 tests were added in:
 
 ```text
-PAUSED
-C - Continue
-R - Restart
-E - Exit Game
+src/test/java/com/zetcode/SnakeGameModelTest.java

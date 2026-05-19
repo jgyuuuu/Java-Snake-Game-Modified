@@ -26,34 +26,6 @@ class SnakeGameModelTest {
     }
 
     // Modified by me:
-    // High score should follow the highest current score reached.
-    @Test
-    void highScoreUpdatesWhenCurrentScoreBecomesHigher() {
-        SnakeGameModel model = new SnakeGameModel();
-
-        model.setObstacles(Collections.emptyList());
-        model.setApplePosition(60, 50);
-        model.update();
-
-        assertEquals(10, model.getHighScore());
-    }
-
-    // Modified by me:
-    // Restart resets current score but preserves high score during the program run.
-    @Test
-    void restartResetsCurrentScoreButKeepsHighScore() {
-        SnakeGameModel model = new SnakeGameModel();
-
-        model.setObstacles(Collections.emptyList());
-        model.setApplePosition(60, 50);
-        model.update();
-        model.restartGame();
-
-        assertEquals(0, model.getScore());
-        assertEquals(10, model.getHighScore());
-    }
-
-    // Modified by me:
     // Pause and resume states should be controllable from the model.
     @Test
     void gameCanBePausedAndResumed() {

@@ -58,7 +58,6 @@ public class SnakeGameModel {
     private int appleX;
     private int appleY;
     private int score;
-    private int highScore;
     private boolean paused;
     private boolean inGame;
     private Direction direction;
@@ -77,7 +76,7 @@ public class SnakeGameModel {
     }
 
     // Modified by me:
-    // Restart resets the current run while preserving the program-run high score.
+    // Restart resets the current run and current score.
     public void restartGame() {
         dots = 3;
         score = 0;
@@ -163,12 +162,11 @@ public class SnakeGameModel {
     }
 
     // Modified by me:
-    // Score and high score update when the head reaches the apple.
+    // Score updates when the head reaches the apple.
     private void checkApple() {
         if (x[0] == appleX && y[0] == appleY) {
             dots++;
             score += SCORE_INCREMENT;
-            updateHighScore();
             locateApple();
         }
     }
@@ -242,12 +240,6 @@ public class SnakeGameModel {
         return false;
     }
 
-    private void updateHighScore() {
-        if (score > highScore) {
-            highScore = score;
-        }
-    }
-
     // Modified by me:
     // Accessors used by Board.java and JUnit tests.
     public int getSnakeX(int index) {
@@ -272,10 +264,6 @@ public class SnakeGameModel {
 
     public int getScore() {
         return score;
-    }
-
-    public int getHighScore() {
-        return highScore;
     }
 
     public boolean isPaused() {
